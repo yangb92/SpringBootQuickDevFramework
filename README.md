@@ -1,5 +1,7 @@
 # Spring Boot 单体应用快速开发框架
 
+前后分离版本, 框架提供的restful用户认证接口
+
 ## 框架介绍
 
 |模块名称|描述|
@@ -10,6 +12,37 @@
 |generator|自动生成Entity,Mapper和Dao|
 
 ### Spring Security
+
+提供restful接口
+
+登陆: `post localhost:8080/login`
+```json
+// 登陆成功
+{
+    "message": "登陆成功",
+    "status": 200,
+    "success": true
+}
+//登陆失败
+{
+    "message": "密码错误",
+    "status": 500,
+    "success": false
+}
+```
+
+退出:
+```json
+GET localhost:8080/logout
+
+{
+    "message": "退出成功",
+    "status": 500,
+    "success": false
+}
+
+```
+
 
 Controller 中获取已登陆用户信息,在参数列表中添加`@CurrentUser AppUser user` 框架自动将当前登陆用户注入AppUser
 ```java
