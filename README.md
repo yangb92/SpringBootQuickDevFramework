@@ -4,7 +4,7 @@
 
 |模块名称|描述|
 |--- | --- |
-|Spring Security|权限框架,采用JSON交互,前后分离的登陆模式|
+|Spring Security|权限框架,使用restful,适合前后分离的项目|
 |tk.mybatis|使用tk.mybatis框架,方便查询|
 |PageHelper|分页插件|
 |generator|自动生成Entity,Mapper和Dao|

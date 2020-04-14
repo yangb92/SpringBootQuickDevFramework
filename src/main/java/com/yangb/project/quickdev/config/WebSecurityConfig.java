@@ -43,30 +43,42 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
                 .and()
+                .csrf().disable()
                 .formLogin()
-                .loginProcessingUrl("/login")
-                .successHandler((request, response, authentication) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    out.write(JSON.toJSONString(ResultVo.makeSuccess("登陆成功")));
-                    out.flush();
-                    out.close();
-                })
-                .failureHandler((request, response, exception) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    ResultVo result = ResultVo.makeFailed(exception.getMessage());
-                    out.write(JSON.toJSONString(result));
-                    out.flush();
-                    out.close();
-                })
+                    .loginProcessingUrl("/login")
+                    .successHandler((request, response, authentication) -> {
+                        response.setContentType("application/json;charset=utf-8");
+                        PrintWriter out = response.getWriter();
+                        out.write(JSON.toJSONString(ResultVo.makeSuccess("登陆成功")));
+                        out.flush();
+                        out.close();
+                    })
+                    .failureHandler((request, response, exception) -> {
+                        response.setContentType("application/json;charset=utf-8");
+                        PrintWriter out = response.getWriter();
+                        ResultVo result = ResultVo.makeFailed(exception.getMessage());
+                        out.write(JSON.toJSONString(result));
+                        out.flush();
+                        out.close();
+                    })
                 .permitAll()
                 .and()
-                .csrf().disable()
+                .logout()
+                    .logoutUrl("/logout")
+                    .logoutSuccessHandler((request, response, authentication) -> {
+                        response.setContentType("application/json;charset=utf-8");
+                        PrintWriter out = response.getWriter();
+                        ResultVo result = ResultVo.makeSuccess("退出成功");
+                        out.write(JSON.toJSONString(result));
+                        out.flush();
+                        out.close();
+                    })
+//                    .permitAll()
+                .and()
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> {
                     response.setContentType("application/json;charset=utf-8");
                     PrintWriter out = response.getWriter();
-                    out.write(JSON.toJSONString(ResultVo.makeFailed("请登录后访问")));
+                    out.write(JSON.toJSONString(ResultVo.makeFailed("请登陆后访问")));
                     out.flush();
                     out.close();
                 });
