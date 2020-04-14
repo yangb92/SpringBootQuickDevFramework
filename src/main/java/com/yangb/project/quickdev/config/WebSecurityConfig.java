@@ -2,7 +2,7 @@ package com.yangb.project.quickdev.config;
 
 import com.alibaba.fastjson.JSON;
 import com.yangb.project.quickdev.common.ResultVo;
-import com.yangb.project.quickdev.config.comment.DaoAuthenticationProvider;
+import com.yangb.project.quickdev.config.comment.CustomAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -25,7 +25,7 @@ import java.io.PrintWriter;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
-    private DaoAuthenticationProvider daoAuthenticationProvider;
+    private CustomAuthenticationProvider customAuthenticationProvider;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -34,14 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(daoAuthenticationProvider);
+        auth.authenticationProvider(customAuthenticationProvider);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                .anyRequest().authenticated()
+        http
+                .authorizeRequests()
+                    .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+                    .anyRequest().authenticated()
                 .and()
                 .csrf().disable()
                 .formLogin()
@@ -65,6 +66,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                     .logoutUrl("/logout")
+                    .clearAuthentication(true)
+                    .deleteCookies("JSESSIONID")
+                    .invalidateHttpSession(true)
                     .logoutSuccessHandler((request, response, authentication) -> {
                         response.setContentType("application/json;charset=utf-8");
                         PrintWriter out = response.getWriter();
