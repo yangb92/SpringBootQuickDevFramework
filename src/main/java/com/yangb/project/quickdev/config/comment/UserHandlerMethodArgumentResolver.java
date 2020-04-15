@@ -9,7 +9,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
- * 自定义参数解析器
+ * 注入当前登陆用户 AppUser 参数
  * @author Created by yangb on 2020/4/14
  */
 public class UserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {

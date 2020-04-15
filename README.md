@@ -7,7 +7,7 @@
 |模块名称|描述|
 |--- | --- |
 |Spring Security|权限框架,使用restful,适合前后分离的项目|
-|tk.mybatis|使用tk.mybatis框架,方便查询|
+|tk.mybatis|使用tk.mybatis框架,简化数据库操作。|
 |PageHelper|分页插件|
 |generator|自动生成Entity,Mapper和Dao|
 
@@ -31,13 +31,11 @@
 }
 ```
 
-退出:
+退出: `GET localhost:8080/logout`
 ```json
-GET localhost:8080/logout
-
 {
     "message": "退出成功",
-    "status": 500,
+    "status": 200,
     "success": false
 }
 

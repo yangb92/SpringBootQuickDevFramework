@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController extends CommonController {
 
     @RequestMapping
-    @PreAuthorize("hasAuthority('ADMIN_USER')")
+    @PreAuthorize("hasAuthority('ROLE_GUEST')")
     public ResultVo index() {
-        return ResultVo.makeSuccess(getUser());
+        return ResultVo.makeSuccess("请求成功");
     }
 
     @RequestMapping("/admin")

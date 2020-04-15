@@ -22,7 +22,7 @@ import java.util.List;
  * @author Created by yangb on 2020/4/14
  */
 @Component
-public class DaoAuthenticationProvider implements AuthenticationProvider {
+public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private AppUserMapper appUserMapper;
