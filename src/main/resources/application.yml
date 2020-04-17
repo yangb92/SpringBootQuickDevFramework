@@ -1,3 +1,6 @@
+server:
+  port: 9999
+
 spring:
   datasource:
     druid:
@@ -10,7 +13,12 @@ spring:
       test-on-borrow: true
 #      driver-class-name: com.mysql.jdbc.Driver
       driver-class-name: com.mysql.cj.jdbc.Driver # MySql8.x
+  redis:
+    host: 192.168.10.45
+    timeout: 3000
+
 
 mybatis:
   type-aliases-package: com.yangb.project.quickdev.entity
   mapper-locations: classpath:mapper/*.xml
+
