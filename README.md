@@ -1,6 +1,8 @@
-# Spring Boot 单体应用快速开发框架
+# Spring Boot 分布式框架 
 
-前后分离版本, 框架提供的restful用户认证接口
+加入了Spring Security + Redis会话共享.适合分布式部署.
+
+文档: <http://book.yangb.xyz/program/SpringSecurity/ContextRepository.html>
 
 ## 框架介绍
 
