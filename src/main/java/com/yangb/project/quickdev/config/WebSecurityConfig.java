@@ -1,8 +1,7 @@
 package com.yangb.project.quickdev.config;
 
-import com.alibaba.fastjson.JSON;
-import com.yangb.project.quickdev.common.ResultVo;
 import com.yangb.project.quickdev.config.comment.CustomAuthenticationProvider;
+import com.yangb.project.quickdev.config.comment.SecurityHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,7 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
-import java.io.PrintWriter;
 
 /**
  * @author Created by yangb on 2020/4/14
@@ -26,6 +24,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private CustomAuthenticationProvider customAuthenticationProvider;
+
+    @Resource
+    private SecurityHandler securityHandler;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -47,21 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .formLogin()
                     .loginProcessingUrl("/login")
-                    .successHandler((request, response, authentication) -> {
-                        response.setContentType("application/json;charset=utf-8");
-                        PrintWriter out = response.getWriter();
-                        out.write(JSON.toJSONString(ResultVo.makeSuccess("登陆成功")));
-                        out.flush();
-                        out.close();
-                    })
-                    .failureHandler((request, response, exception) -> {
-                        response.setContentType("application/json;charset=utf-8");
-                        PrintWriter out = response.getWriter();
-                        ResultVo result = ResultVo.makeFailed(exception.getMessage());
-                        out.write(JSON.toJSONString(result));
-                        out.flush();
-                        out.close();
-                    })
+                    .successHandler(securityHandler::onAuthenticationSuccess)
+                    .failureHandler(securityHandler::onAuthenticationFailure)
                 .permitAll()
                 .and()
                 .logout()
@@ -69,22 +57,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .clearAuthentication(true)
                     .deleteCookies("JSESSIONID")
                     .invalidateHttpSession(true)
-                    .logoutSuccessHandler((request, response, authentication) -> {
-                        response.setContentType("application/json;charset=utf-8");
-                        PrintWriter out = response.getWriter();
-                        ResultVo result = ResultVo.makeSuccess("退出成功");
-                        out.write(JSON.toJSONString(result));
-                        out.flush();
-                        out.close();
-                    })
-//                    .permitAll()
+                    .logoutSuccessHandler(securityHandler::onLogoutSuccess)
+                    .permitAll()
                 .and()
-                .exceptionHandling().authenticationEntryPoint((request, response, authException) -> {
-                    response.setContentType("application/json;charset=utf-8");
-                    PrintWriter out = response.getWriter();
-                    out.write(JSON.toJSONString(ResultVo.makeFailed("请登陆后访问")));
-                    out.flush();
-                    out.close();
-                });
+                .exceptionHandling().authenticationEntryPoint(securityHandler::commence);
     }
 }
