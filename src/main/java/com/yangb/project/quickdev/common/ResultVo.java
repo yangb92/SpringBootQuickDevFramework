@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * Result View Object 结果展示对象
  *
- * @author Created by yangb on 2020/4/14
+ * Created by yangb on 2020/4/14
  */
 @Data
 @AllArgsConstructor
@@ -28,8 +28,16 @@ public class ResultVo<T extends Object> {
         return makeResult(SUCCESS_CODE, true, "成功", data);
     }
 
+    public static <T> ResultVo makeSuccess(String message, T data){
+        return makeResult(SUCCESS_CODE, true, message, data);
+    }
+
     public static ResultVo makeFailed(String message) {
         return makeResult(FAILED_CODE, false, message, null);
+    }
+
+    public static ResultVo makeFailed(int status, String message){
+        return makeResult(status, false, message, null);
     }
 
     private static <T> ResultVo makeResult(int status, boolean success, String message, T data) {

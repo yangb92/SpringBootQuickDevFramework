@@ -4,6 +4,7 @@ import com.yangb.project.quickdev.common.CommonController;
 import com.yangb.project.quickdev.common.ResultVo;
 import com.yangb.project.quickdev.config.comment.CurrentUser;
 import com.yangb.project.quickdev.entity.AppUser;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,8 @@ public class MainController extends CommonController {
     }
 
     @RequestMapping("/admin")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @Secured("ROLE_ADMIN")
     public ResultVo admin(@CurrentUser AppUser user) {
         return ResultVo.makeSuccess(user);
     }
