@@ -1,6 +1,6 @@
-# Spring Boot 单体应用快速开发模板
+# Spring Boot 工程快速开发模板 :rocket:
 
-提供 RESTful API
+快速开发一个响应Http请求的工程, 提供 RESTful API
 
 ## 功能介绍
 
