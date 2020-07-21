@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjapl.ygzw.data.exchange.zww.dao.DnTaskGeneralExtendMapper">
+  <resultMap id="BaseResultMap" type="com.zjapl.ygzw.data.exchange.zww.entity.DnTaskGeneralExtend">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ROWGUID" jdbcType="VARCHAR" property="rowguid" />
+    <result column="TASKCODE" jdbcType="VARCHAR" property="taskcode" />
+    <result column="ISENTRYCENTER" jdbcType="VARCHAR" property="isentrycenter" />
+    <result column="HANDLEAREA" jdbcType="VARCHAR" property="handlearea" />
+    <result column="OTHERDEPT" jdbcType="VARCHAR" property="otherdept" />
+    <result column="SERVICETYPE" jdbcType="VARCHAR" property="servicetype" />
+    <result column="RESULTTYPE" jdbcType="VARCHAR" property="resulttype" />
+    <result column="RESULTNAME" jdbcType="VARCHAR" property="resultname" />
+    <result column="ISSCHEDULE" jdbcType="VARCHAR" property="isschedule" />
+    <result column="ISPAYONLINE" jdbcType="VARCHAR" property="ispayonline" />
+    <result column="ISEXPRESS" jdbcType="VARCHAR" property="isexpress" />
+    <result column="ISSERVICETERMINALS" jdbcType="VARCHAR" property="isserviceterminals" />
+    <result column="LIMITSCENEEXPLAIN" jdbcType="VARCHAR" property="limitsceneexplain" />
+    <result column="TASKGUID" jdbcType="VARCHAR" property="taskguid" />
+    <result column="EXTENDFIELD" jdbcType="VARCHAR" property="extendfield" />
+    <result column="TASKHANDLEITEM" jdbcType="VARCHAR" property="taskhandleitem" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="RESULTGUID" jdbcType="VARCHAR" property="resultguid" />
+    <result column="USERTOPICTYPE" jdbcType="VARCHAR" property="usertopictype" />
+    <result column="USERCHARACTERTOPICTYPE" jdbcType="VARCHAR" property="usercharactertopictype" />
+    <result column="CORPTOPICTYPE" jdbcType="VARCHAR" property="corptopictype" />
+    <result column="CORPCHARACTERTOPICTYPE" jdbcType="VARCHAR" property="corpcharactertopictype" />
+    <result column="TOWNNAME" jdbcType="VARCHAR" property="townname" />
+    <result column="TOWNCODE" jdbcType="VARCHAR" property="towncode" />
+    <result column="VILLAGENAME" jdbcType="VARCHAR" property="villagename" />
+    <result column="VILLAGECODE" jdbcType="VARCHAR" property="villagecode" />
+    <result column="CD_TIME" jdbcType="TIMESTAMP" property="cdTime" />
+    <result column="ONLINEHANDLEDEPTH" jdbcType="VARCHAR" property="onlinehandledepth" />
+    <result column="ISONLINE" jdbcType="VARCHAR" property="isonline" />
+    <result column="SYNC_SIGN" jdbcType="VARCHAR" property="syncSign" />
+    <result column="CD_OPERATION" jdbcType="VARCHAR" property="cdOperation" />
+    <result column="CD_BATCH" jdbcType="VARCHAR" property="cdBatch" />
+    <result column="LIMITEXPLAIN" jdbcType="CLOB" property="limitexplain" />
+    <result column="ONLINEHANDLEURL" jdbcType="CLOB" property="onlinehandleurl" />
+  </resultMap>
+</mapper>

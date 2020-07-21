@@ -1,16 +1,17 @@
-spring:
+# 网上办事数据库配置
+wsbs:
   datasource:
-    druid:
-      url: jdbc:mysql://localhost:3306/quick_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-      username: root
-      password: root
-      initial-size: 1
-      min-idle: 1
-      max-active: 20
-      test-on-borrow: true
-#      driver-class-name: com.mysql.jdbc.Driver
-      driver-class-name: com.mysql.cj.jdbc.Driver # MySql8.x
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@47.98.63.50:1521:ORCL
+    username: APL_YGZW_POWER
+    password: APL_YGZW_POWER
+    mapper-location: classpath:mapper/wsbs/*.xml
 
-mybatis:
-  type-aliases-package: com.yangb.project.quickdev.entity
-  mapper-locations: classpath:mapper/*.xml
+# 政务网数据库配置
+zww:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@47.98.63.50:1521:ORCL
+    username: APL_YGZW_ONLINE
+    password: APL_YGZW_ONLINE
+    mapper-location: classpath:mapper/zww/*.xml

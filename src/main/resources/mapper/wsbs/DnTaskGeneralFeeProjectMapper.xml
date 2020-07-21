@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjapl.ygzw.data.exchange.wsbs.dao.DnTaskGeneralFeeProjectMapper">
+  <resultMap id="BaseResultMap" type="com.zjapl.ygzw.data.exchange.wsbs.entity.DnTaskGeneralFeeProject">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="ROWGUID" jdbcType="VARCHAR" property="rowguid" />
+    <result column="TASKCODE" jdbcType="VARCHAR" property="taskcode" />
+    <result column="TASKGUID" jdbcType="VARCHAR" property="taskguid" />
+    <result column="ORDERNUM" jdbcType="DECIMAL" property="ordernum" />
+    <result column="FEENAME" jdbcType="VARCHAR" property="feename" />
+    <result column="ISDESC" jdbcType="VARCHAR" property="isdesc" />
+    <result column="TASKHANDLEITEM" jdbcType="VARCHAR" property="taskhandleitem" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="CD_TIME" jdbcType="TIMESTAMP" property="cdTime" />
+    <result column="SYNC_SIGN" jdbcType="VARCHAR" property="syncSign" />
+    <result column="CD_OPERATION" jdbcType="VARCHAR" property="cdOperation" />
+    <result column="CD_BATCH" jdbcType="VARCHAR" property="cdBatch" />
+    <result column="FEESTAND" jdbcType="CLOB" property="feestand" />
+    <result column="DESCEXPLAIN" jdbcType="CLOB" property="descexplain" />
+    <result column="BYLAW" jdbcType="CLOB" property="bylaw" />
+  </resultMap>
+</mapper>

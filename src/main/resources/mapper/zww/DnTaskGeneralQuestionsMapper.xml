@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjapl.ygzw.data.exchange.zww.dao.DnTaskGeneralQuestionsMapper">
+  <resultMap id="BaseResultMap" type="com.zjapl.ygzw.data.exchange.zww.entity.DnTaskGeneralQuestions">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ROWGUID" jdbcType="VARCHAR" property="rowguid" />
+    <result column="TASKCODE" jdbcType="VARCHAR" property="taskcode" />
+    <result column="TASKGUID" jdbcType="VARCHAR" property="taskguid" />
+    <result column="ORDERNUM" jdbcType="DECIMAL" property="ordernum" />
+    <result column="QUESTION" jdbcType="VARCHAR" property="question" />
+    <result column="TASKHANDLEITEM" jdbcType="VARCHAR" property="taskhandleitem" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="CD_TIME" jdbcType="TIMESTAMP" property="cdTime" />
+    <result column="SYNC_SIGN" jdbcType="VARCHAR" property="syncSign" />
+    <result column="CD_OPERATION" jdbcType="VARCHAR" property="cdOperation" />
+    <result column="CD_BATCH" jdbcType="VARCHAR" property="cdBatch" />
+    <result column="ANSWER" jdbcType="CLOB" property="answer" />
+  </resultMap>
+</mapper>

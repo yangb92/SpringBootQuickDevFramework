@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjapl.ygzw.data.exchange.wsbs.dao.DnTaskGeneralBasicMapper">
+  <resultMap id="BaseResultMap" type="com.zjapl.ygzw.data.exchange.wsbs.entity.DnTaskGeneralBasic">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ROWGUID" jdbcType="VARCHAR" property="rowguid" />
+    <result column="CATALOGCODE" jdbcType="VARCHAR" property="catalogcode" />
+    <result column="TASKCODE" jdbcType="VARCHAR" property="taskcode" />
+    <result column="TASKNAME" jdbcType="VARCHAR" property="taskname" />
+    <result column="TASKTYPE" jdbcType="VARCHAR" property="tasktype" />
+    <result column="USELEVEL" jdbcType="VARCHAR" property="uselevel" />
+    <result column="DEPTTYPE" jdbcType="VARCHAR" property="depttype" />
+    <result column="DEPTNAME" jdbcType="VARCHAR" property="deptname" />
+    <result column="TASKSTATE" jdbcType="VARCHAR" property="taskstate" />
+    <result column="SERVERTYPE" jdbcType="VARCHAR" property="servertype" />
+    <result column="PROJECTTYPE" jdbcType="VARCHAR" property="projecttype" />
+    <result column="PROMISETYPE" jdbcType="VARCHAR" property="promisetype" />
+    <result column="PROMISEDAY" jdbcType="DECIMAL" property="promiseday" />
+    <result column="DEPTCODE" jdbcType="VARCHAR" property="deptcode" />
+    <result column="ENTRUSTNAME" jdbcType="VARCHAR" property="entrustname" />
+    <result column="ANTICIPATEDAY" jdbcType="DECIMAL" property="anticipateday" />
+    <result column="ANTICIPATETYPE" jdbcType="VARCHAR" property="anticipatetype" />
+    <result column="ISFEE" jdbcType="VARCHAR" property="isfee" />
+    <result column="PLANCANCELDATE" jdbcType="TIMESTAMP" property="plancanceldate" />
+    <result column="PLANEFFECTIVEDATE" jdbcType="TIMESTAMP" property="planeffectivedate" />
+    <result column="TRANSACTTIME" jdbcType="VARCHAR" property="transacttime" />
+    <result column="TRANSACTADDR" jdbcType="VARCHAR" property="transactaddr" />
+    <result column="ISSINGLELOGIN" jdbcType="VARCHAR" property="issinglelogin" />
+    <result column="HANDLETYPE" jdbcType="VARCHAR" property="handletype" />
+    <result column="POWERSOURCE" jdbcType="VARCHAR" property="powersource" />
+    <result column="TASKHANDLEITEM" jdbcType="VARCHAR" property="taskhandleitem" />
+    <result column="APPISSINGLELOGIN" jdbcType="VARCHAR" property="appissinglelogin" />
+    <result column="CD_TIME" jdbcType="TIMESTAMP" property="cdTime" />
+    <result column="TASKVERSION" jdbcType="DECIMAL" property="taskversion" />
+    <result column="SPECIALPROCEDURE" jdbcType="VARCHAR" property="specialprocedure" />
+    <result column="LIMITSCENENUM" jdbcType="DECIMAL" property="limitscenenum" />
+    <result column="SYNC_SIGN" jdbcType="VARCHAR" property="syncSign" />
+    <result column="CD_OPERATION" jdbcType="VARCHAR" property="cdOperation" />
+    <result column="CD_BATCH" jdbcType="VARCHAR" property="cdBatch" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="BELONG_AREA" jdbcType="VARCHAR" property="belongArea" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="DEPT_NUMBER" jdbcType="VARCHAR" property="deptNumber" />
+    <result column="ACCEPTCONDITION" jdbcType="CLOB" property="acceptcondition" />
+    <result column="SUPERVISEWAY" jdbcType="CLOB" property="superviseway" />
+    <result column="LINKWAY" jdbcType="CLOB" property="linkway" />
+    <result column="MOBILETERMINALURL" jdbcType="CLOB" property="mobileterminalurl" />
+    <result column="BYLAW" jdbcType="CLOB" property="bylaw" />
+    <result column="HANDLEFLOW" jdbcType="CLOB" property="handleflow" />
+    <result column="FEEBASIS" jdbcType="CLOB" property="feebasis" />
+    <result column="LINKADDR" jdbcType="CLOB" property="linkaddr" />
+    <result column="ANTICIPATEEXPLAIN" jdbcType="CLOB" property="anticipateexplain" />
+    <result column="PROMISEEXPLAIN" jdbcType="CLOB" property="promiseexplain" />
+  </resultMap>
+</mapper>

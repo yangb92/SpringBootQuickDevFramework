@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjapl.ygzw.data.exchange.zww.dao.DnTaskGeneralMaterialSzMapper">
+  <resultMap id="BaseResultMap" type="com.zjapl.ygzw.data.exchange.zww.entity.DnTaskGeneralMaterialSz">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="ROWGUID" jdbcType="VARCHAR" property="rowguid" />
+    <result column="TASKCODE" jdbcType="VARCHAR" property="taskcode" />
+    <result column="TASKGUID" jdbcType="VARCHAR" property="taskguid" />
+    <result column="MATERIALNAME" jdbcType="VARCHAR" property="materialname" />
+    <result column="MATERIALTYPE" jdbcType="VARCHAR" property="materialtype" />
+    <result column="ISNEED" jdbcType="VARCHAR" property="isneed" />
+    <result column="SOURCEEXPLAIN" jdbcType="VARCHAR" property="sourceexplain" />
+    <result column="PAGENUM" jdbcType="DECIMAL" property="pagenum" />
+    <result column="PAGEFORMAT" jdbcType="VARCHAR" property="pageformat" />
+    <result column="FILLEXPLAIN" jdbcType="VARCHAR" property="fillexplain" />
+    <result column="ORDERNUM" jdbcType="DECIMAL" property="ordernum" />
+    <result column="SOURCETYPE" jdbcType="VARCHAR" property="sourcetype" />
+    <result column="MATERIALFORMAT" jdbcType="VARCHAR" property="materialformat" />
+    <result column="TASKHANDLEITEM" jdbcType="VARCHAR" property="taskhandleitem" />
+    <result column="DATASOURCE" jdbcType="VARCHAR" property="datasource" />
+    <result column="FORMGUID" jdbcType="VARCHAR" property="formguid" />
+    <result column="EXAMPLEGUID" jdbcType="VARCHAR" property="exampleguid" />
+    <result column="CD_TIME" jdbcType="TIMESTAMP" property="cdTime" />
+    <result column="SYNC_SIGN" jdbcType="VARCHAR" property="syncSign" />
+    <result column="CD_OPERATION" jdbcType="VARCHAR" property="cdOperation" />
+    <result column="CD_BATCH" jdbcType="VARCHAR" property="cdBatch" />
+    <result column="REMARK" jdbcType="CLOB" property="remark" />
+    <result column="ACCEPTSTAND" jdbcType="CLOB" property="acceptstand" />
+    <result column="BYLAW" jdbcType="CLOB" property="bylaw" />
+  </resultMap>
+</mapper>
