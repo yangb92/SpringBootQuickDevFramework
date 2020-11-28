@@ -1,4 +1,4 @@
-package com.yangb.project.quickdev.ctrl;
+package com.yangb.project.quickdev.api;
 
 import com.yangb.project.quickdev.common.CommonController;
 import com.yangb.project.quickdev.common.ResultVo;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Created by yangb on 2020/4/14
  */
 @RestController
-public class MainController extends CommonController {
+public class HomeApi extends CommonController {
 
     @RequestMapping
     @PreAuthorize("hasAuthority('ROLE_GUEST')")
@@ -22,7 +22,6 @@ public class MainController extends CommonController {
     }
 
     @RequestMapping("/admin")
-//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @Secured("ROLE_ADMIN")
     public ResultVo admin(@CurrentUser AppUser user) {
         return ResultVo.makeSuccess(user);

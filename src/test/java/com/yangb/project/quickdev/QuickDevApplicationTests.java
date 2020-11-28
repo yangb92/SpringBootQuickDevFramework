@@ -38,5 +38,4 @@ class QuickDevApplicationTests {
         List<AppPermission> list = permissionMapper.queryByUserid(1);
         list.forEach(item -> System.out.println(item.getDescription()));
     }
-
 }
