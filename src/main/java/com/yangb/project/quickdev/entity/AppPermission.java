@@ -8,11 +8,20 @@ public class AppPermission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "parent_id")
+    private Integer parentId;
+
     private String code;
 
-    private String description;
+    private String name;
 
     private String url;
+
+    private String icon;
+
+    private Integer order;
+
+    private Integer type;
 
     /**
      * @return id
@@ -26,6 +35,20 @@ public class AppPermission {
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    /**
+     * @return parent_id
+     */
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    /**
+     * @param parentId
+     */
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     /**
@@ -43,17 +66,17 @@ public class AppPermission {
     }
 
     /**
-     * @return description
+     * @return name
      */
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param description
+     * @param name
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -68,5 +91,47 @@ public class AppPermission {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * @return icon
+     */
+    public String getIcon() {
+        return icon;
+    }
+
+    /**
+     * @param icon
+     */
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    /**
+     * @return order
+     */
+    public Integer getOrder() {
+        return order;
+    }
+
+    /**
+     * @param order
+     */
+    public void setOrder(Integer order) {
+        this.order = order;
+    }
+
+    /**
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * @param type
+     */
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

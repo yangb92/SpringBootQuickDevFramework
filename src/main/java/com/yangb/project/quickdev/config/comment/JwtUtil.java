@@ -15,12 +15,10 @@ public class JwtUtil {
     private final static Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     public static String encoder(String val){
-        String token = Jwts.builder().setSubject(val).signWith(key).compact();
-        return token;
+        return Jwts.builder().setSubject(val).signWith(key).compact();
     }
 
     public static String decoder(String token){
-        System.out.println(token);
         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody().getSubject();
     }
 }

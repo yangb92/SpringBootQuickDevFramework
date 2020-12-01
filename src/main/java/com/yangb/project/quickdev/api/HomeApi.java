@@ -1,6 +1,5 @@
 package com.yangb.project.quickdev.api;
 
-import com.yangb.project.quickdev.common.CommonController;
 import com.yangb.project.quickdev.common.ResultVo;
 import com.yangb.project.quickdev.config.comment.CurrentUser;
 import com.yangb.project.quickdev.entity.AppUser;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Created by yangb on 2020/4/14
  */
 @RestController
-public class HomeApi extends CommonController {
+public class HomeApi {
 
     @RequestMapping
     @PreAuthorize("hasAuthority('ROLE_GUEST')")

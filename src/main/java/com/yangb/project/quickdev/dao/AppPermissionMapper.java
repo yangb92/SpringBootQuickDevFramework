@@ -8,4 +8,6 @@ import java.util.List;
 public interface AppPermissionMapper extends Dao<AppPermission> {
 
     List<AppPermission> queryByUserid(int userid);
+
+    List<AppPermission> queryUserMenu(int userid);
 }

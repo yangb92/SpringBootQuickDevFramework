@@ -1,5 +1,6 @@
 package com.yangb.project.quickdev.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "app_user")
@@ -15,6 +16,13 @@ public class AppUser {
     private String fullname;
 
     private String mobile;
+
+    private Integer status;
+
+    private String email;
+
+    @Column(name = "create_time")
+    private Date createTime;
 
     /**
      * @return id
@@ -84,5 +92,47 @@ public class AppUser {
      */
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    /**
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status
+     */
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    /**
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return create_time
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * @param createTime
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

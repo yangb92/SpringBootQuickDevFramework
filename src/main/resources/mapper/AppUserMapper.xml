@@ -10,8 +10,10 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="fullname" jdbcType="VARCHAR" property="fullname" />
     <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
-
 
   <select id="queryByUsername" parameterType="string" resultMap="BaseResultMap">
     select * from app_user where username=#{username}

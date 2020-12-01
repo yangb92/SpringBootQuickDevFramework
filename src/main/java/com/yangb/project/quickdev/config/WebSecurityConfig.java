@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable();
         // 自定义授权错误的返回信息
         http.exceptionHandling().authenticationEntryPoint(((request, response, authException) -> {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(200);
             response.getWriter().println(JSON.toJSON(ResultVo.makeFailed(HttpServletResponse.SC_UNAUTHORIZED,authException.getMessage())));
         }));
 
