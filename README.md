@@ -1,5 +1,7 @@
 # Spring Boot 工程快速开发模板 :rocket:
 
+前端 VUE 项目地址：https://github.com/yangb92/admin-vue-elementui
+
 快速开发一个响应Http请求的工程, 提供 RESTful API
 
 无状态服务，适用于小程序或移动端，采用 JWT 加密技术，采用 Token 验证。
