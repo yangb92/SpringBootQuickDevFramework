@@ -1,20 +1,16 @@
 package com.yangb.project.quickdev.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "app_user_role")
 public class AppUserRole {
+    @Id
     @Column(name = "user_id")
     private Integer userId;
 
+    @Id
     @Column(name = "role_id")
     private Integer roleId;
-
-    @Column(name = "create_time")
-    private Date createTime;
-
-    private Integer creator;
 
     /**
      * @return user_id
@@ -42,33 +38,5 @@ public class AppUserRole {
      */
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
-    }
-
-    /**
-     * @return create_time
-     */
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    /**
-     * @param createTime
-     */
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    /**
-     * @return creator
-     */
-    public Integer getCreator() {
-        return creator;
-    }
-
-    /**
-     * @param creator
-     */
-    public void setCreator(Integer creator) {
-        this.creator = creator;
     }
 }

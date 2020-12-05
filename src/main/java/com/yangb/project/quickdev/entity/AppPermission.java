@@ -11,7 +11,8 @@ public class AppPermission {
     @Column(name = "parent_id")
     private Integer parentId;
 
-    private String code;
+    @Column(name = "permission_code")
+    private String permissionCode;
 
     private String name;
 
@@ -19,9 +20,11 @@ public class AppPermission {
 
     private String icon;
 
-    private Integer order;
+    @Column(name = "permission_order")
+    private Integer permissionOrder;
 
-    private Integer type;
+    @Column(name = "permission_type")
+    private Integer permissionType;
 
     /**
      * @return id
@@ -52,17 +55,17 @@ public class AppPermission {
     }
 
     /**
-     * @return code
+     * @return permission_code
      */
-    public String getCode() {
-        return code;
+    public String getPermissionCode() {
+        return permissionCode;
     }
 
     /**
-     * @param code
+     * @param permissionCode
      */
-    public void setCode(String code) {
-        this.code = code;
+    public void setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
     }
 
     /**
@@ -108,30 +111,30 @@ public class AppPermission {
     }
 
     /**
-     * @return order
+     * @return permission_order
      */
-    public Integer getOrder() {
-        return order;
+    public Integer getPermissionOrder() {
+        return permissionOrder;
     }
 
     /**
-     * @param order
+     * @param permissionOrder
      */
-    public void setOrder(Integer order) {
-        this.order = order;
+    public void setPermissionOrder(Integer permissionOrder) {
+        this.permissionOrder = permissionOrder;
     }
 
     /**
-     * @return type
+     * @return permission_type
      */
-    public Integer getType() {
-        return type;
+    public Integer getPermissionType() {
+        return permissionType;
     }
 
     /**
-     * @param type
+     * @param permissionType
      */
-    public void setType(Integer type) {
-        this.type = type;
+    public void setPermissionType(Integer permissionType) {
+        this.permissionType = permissionType;
     }
 }

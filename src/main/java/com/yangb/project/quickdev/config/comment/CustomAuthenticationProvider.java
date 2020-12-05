@@ -46,7 +46,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         List<AppPermission> permissions = permissionMapper.queryByUserid(user.getId());
 
         return new UsernamePasswordAuthenticationToken(user,password,
-                AuthorityUtils.createAuthorityList(permissions.stream().map(item -> item.getCode()).toArray(String[]::new)));
+                AuthorityUtils.createAuthorityList(permissions.stream().map(item -> item.getPermissionCode()).toArray(String[]::new)));
     }
 
     @Override

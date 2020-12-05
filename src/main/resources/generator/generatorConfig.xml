@@ -32,13 +32,13 @@
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
         <!-- 配置 DAO 存放路径 -->
-        <!--<javaClientGenerator-->
-                <!--targetPackage="com.yangb.project.quickdev.dao"-->
-                <!--targetProject="src/main/java"-->
-                <!--type="XMLMAPPER"/>-->
+        <javaClientGenerator
+                targetPackage="com.yangb.project.quickdev.dao"
+                targetProject="src/main/java"
+                type="XMLMAPPER"/>
 
         <!-- 配置需要指定生成的数据库和表，% 代表所有表 -->
-        <table tableName="APP_USER">
+        <table tableName="APP_USER_ROLE">
             <!-- mysql 配置 -->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>

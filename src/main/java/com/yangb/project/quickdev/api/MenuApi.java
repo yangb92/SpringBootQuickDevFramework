@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -46,6 +47,7 @@ public class MenuApi {
                 menus.add(menu);
             }
         }
+        Collections.sort(menus);
         return menus;
     }
 
@@ -55,7 +57,7 @@ public class MenuApi {
         menu.setParentId(permission.getParentId());
         menu.setIcon(permission.getIcon());
         menu.setName(permission.getName());
-        menu.setOrder(permission.getOrder());
+        menu.setOrder(permission.getPermissionOrder());
         menu.setUrl(permission.getUrl());
         return menu;
     }

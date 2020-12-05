@@ -9,5 +9,7 @@ public interface AppPermissionMapper extends Dao<AppPermission> {
 
     List<AppPermission> queryByUserid(int userid);
 
+    List<AppPermission> queryByRoleId(int roleid);
+
     List<AppPermission> queryUserMenu(int userid);
 }

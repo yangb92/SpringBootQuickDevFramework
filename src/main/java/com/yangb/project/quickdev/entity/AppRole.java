@@ -1,6 +1,5 @@
 package com.yangb.project.quickdev.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "app_role")
@@ -12,11 +11,8 @@ public class AppRole {
     @Column(name = "role_name")
     private String roleName;
 
-    @Column(name = "create_time")
-    private Date createTime;
-
-    @Column(name = "update_time")
-    private Date updateTime;
+    @Column(name = "role_desc")
+    private String roleDesc;
 
     private Short status;
 
@@ -49,31 +45,17 @@ public class AppRole {
     }
 
     /**
-     * @return create_time
+     * @return role_desc
      */
-    public Date getCreateTime() {
-        return createTime;
+    public String getRoleDesc() {
+        return roleDesc;
     }
 
     /**
-     * @param createTime
+     * @param roleDesc
      */
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    /**
-     * @return update_time
-     */
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    /**
-     * @param updateTime
-     */
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setRoleDesc(String roleDesc) {
+        this.roleDesc = roleDesc;
     }
 
     /**

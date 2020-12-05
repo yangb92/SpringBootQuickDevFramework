@@ -50,7 +50,7 @@ public class JwtTokenFilter extends OncePerRequestFilter
         try {
             String json = JwtUtil.decoder(token);
             UserBo user = JSON.parseObject(json, UserBo.class);
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user.getUser(),null, AuthorityUtils.createAuthorityList(user.getPermission().stream().map(item -> item.getCode()).toArray(String[]::new)));
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user.getUser(),null, AuthorityUtils.createAuthorityList(user.getPermission().stream().map(item -> item.getPermissionCode()).toArray(String[]::new)));
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
             SecurityContextHolder.getContext().setAuthentication(authentication);
             filterChain.doFilter(httpServletRequest,httpServletResponse);
